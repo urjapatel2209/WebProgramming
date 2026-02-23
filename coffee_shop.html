@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Haven</title>
+
+  <!-- Google Font for cozy coffee shop feel -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== Reset ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f4e9dc; /* cream */
+      color: #3e2723; /* dark brown */
+      display: grid;
+      grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+      grid-template-rows: auto auto 1fr auto;
+      min-height: 100vh;
+    }
+
+    /* ===== Grid Areas ===== */
+    .header {
+      grid-area: header;
+      background-color: #6f4e37; /* coffee brown */
+      color: #ffffff;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-family: 'Merriweather', serif;
+    }
+
+    .nav {
+      grid-area: nav;
+      background-color: #8d6e63; /* lighter brown */
+      padding: 1rem;
+    }
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+    }
+
+    .nav a:hover {
+      text-decoration: underline;
+    }
+
+    .main-content {
+      grid-area: main;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .main-content h2 {
+      margin-bottom: 1.5rem;
+      font-family: 'Merriweather', serif;
+    }
+
+    .footer {
+      grid-area: footer;
+      background-color: #6f4e37;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    /* ===== Flexbox Section ===== */
+    .flex-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .flex-item {
+      background-color: #d7ccc8; /* soft latte color */
+      padding: 1.5rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .flex-item:hover {
+      transform: scale(1.05);
+      background-color: #bcaaa4;
+    }
+
+    /* ===== Responsive Design ===== */
+    @media (min-width: 768px) {
+      body {
+        grid-template-areas:
+          "header header"
+          "nav nav"
+          "main main"
+          "footer footer";
+      }
+
+      .nav ul {
+        justify-content: flex-end;
+        margin-right: 2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .flex-container {
+        flex-direction: column;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <h1>Java Haven</h1>
+    <p>Your daily dose of caffeine and comfort.</p>
+  </header>
+  
+  <nav class="nav">
+    <ul>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <main class="main-content">
+    <h2>Featured Coffees</h2>
+    <div class="flex-container">
+      <div class="flex-item">Espresso</div>
+      <div class="flex-item">Cappuccino</div>
+      <div class="flex-item">Latte</div>
+      <div class="flex-item">Mocha</div>
+    </div>
+  </main>
+  
+  <footer class="footer">
+    <p>&copy; 2025 Java Haven. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
